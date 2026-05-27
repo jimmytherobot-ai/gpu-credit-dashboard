@@ -356,8 +356,7 @@ const raw = [
 ["2026-05-27", 94652381, 335480, 1931769, 172877751, 6739193, 120523947, 397060521]
 ];
 
-// Fold originated loans into sUSDai (Arbitrum)
-raw.forEach(r => { r[4] = (r[4] || 0) + (r[7] || 0); r[7] = 0; });
+// (no loan folding needed — data already correctly scaled)
 
 // ── Build Chart.js datasets ───────────────────────────────────────
 Chart.defaults.font.family = "'Geist', 'Helvetica Neue', Helvetica, Arial, sans-serif";
