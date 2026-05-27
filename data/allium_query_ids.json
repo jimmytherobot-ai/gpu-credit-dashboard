@@ -1,0 +1,12 @@
+{
+  "tvl_usdai_base":           "vvNgImlQlGWX14ovT4LX",
+  "tvl_susdai_arb":           "IX1YbvwFARC69JX6hZ0W",
+  "tvl_usdai_arb":            "RMZlduOIxKcO6yIoA9e0",
+  "tvl_by_chain_daily":       "0kEVFpCTRlV75NXen1qI",
+  "usdai_mint_burn":          "Wk9ozh2w5Y1irB7WUbtQ",
+  "susdai_holders":           "YPfHSUOHxkM0zAdikOB6",
+  "usdai_holders":            "IFYzlwugB9GcyylTrUaK",
+  "usdai_holders_by_protocol":"CkYHQ1qRZ2nfw3OAbyqF",
+
+  "_note": "Query IDs from Allium Explorer. Reuse via POST /api/v1/explorer/queries/{id}/run — never create new queries for these."
+}
