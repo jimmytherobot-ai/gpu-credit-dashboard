@@ -90,22 +90,22 @@ new Chart(document.getElementById('tvlChart').getContext('2d'), {
     labels,
     datasets: [
       {
-        label: 'sUSDai TVL',
-        data: susdai,
-        backgroundColor: 'rgba(42,158,79,0.72)',
-        borderColor: '#1A7A3C',
+        label: 'USDai TVL',
+        data: usdai,
+        backgroundColor: 'rgba(200,112,96,0.85)',
+        borderColor: '#A84030',
         borderWidth: 0,
         fill: 'origin',
         pointRadius: 0,
         order: 2,
       },
       {
-        label: 'USDai TVL',
-        data: usdai,
-        backgroundColor: 'rgba(200,112,96,0.85)',
-        borderColor: '#A84030',
+        label: 'sUSDai TVL',
+        data: susdai,
+        backgroundColor: 'rgba(42,158,79,0.72)',
+        borderColor: '#1A7A3C',
         borderWidth: 0,
-        fill: '-1',   // stacked on top of sUSDai
+        fill: '-1',   // stacked on top of USDai
         pointRadius: 0,
         order: 1,
       },
