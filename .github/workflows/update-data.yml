@@ -1,0 +1,60 @@
+name: Update Dashboard Data
+
+on:
+  schedule:
+    # Daily at 6am UTC
+    - cron: '0 6 * * *'
+  workflow_dispatch:
+    inputs:
+      force_allium:
+        description: 'Force Allium refresh (ignores cache)'
+        required: false
+        default: 'false'
+        type: boolean
+
+permissions:
+  contents: write
+
+jobs:
+  update-data:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Force Allium cache bust (if requested)
+        if: ${{ inputs.force_allium == 'true' }}
+        run: |
+          rm -f data/allium_usdai_holders.json
+          rm -f data/allium_susdai_holders.json
+          rm -f data/allium_mint_burn.json
+          echo "Allium cache cleared"
+
+      - name: Run data fetch script
+        env:
+          ALLIUM_API_KEY: ${{ secrets.ALLIUM_API_KEY }}
+        run: python scripts/fetch_data.py
+
+      - name: Commit updated data and HTML
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "chore: update dashboard data [skip ci]"
+            git push
+            echo "Changes committed and pushed"
+          fi

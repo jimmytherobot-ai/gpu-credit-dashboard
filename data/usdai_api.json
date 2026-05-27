@@ -1,0 +1,1068 @@
+{
+  "tvl": {
+    "tvl": 396975768.61712307,
+    "usdaiTvl": 96831816.95559831,
+    "sUsdaiTvl": 300143951.6615247,
+    "mintedUsdai": 396975768.61712307,
+    "stablecoinReserves": 292536887.239068,
+    "loansReserves": 104301179.95687036,
+    "updatedAt": "2026-05-27T18:59:59.000Z"
+  },
+  "current_apy": 7.07,
+  "expected_apy": {
+    "result": {
+      "projectedApy": 12.309845006091706,
+      "newDealsCapital": 292674588.6602527,
+      "detailedDeals": [
+        {
+          "documentId": "8b0070b0-00ec-4ae9-be28-9fc413a4a483",
+          "type": "DEAL",
+          "name": "RTX PRO 6000 [1]",
+          "chain": 42161,
+          "borrower": "0xe277b53c60c43012394d52b5f21c6d5c08ca0eb9",
+          "stage": 6,
+          "escrowed": null,
+          "locationName": "Montreal, CA",
+          "locationLongitude": -73,
+          "locationLatitude": 45,
+          "amount": "77550000000000000000000",
+          "term": 93312000,
+          "apr": 13.499999997451201,
+          "offTake": 0,
+          "group": "RTX PRO 6000 [7]",
+          "hardware": [
+            {
+              "name": "RTX PRO 6000 Blackwell",
+              "percentage": 100,
+              "count": 1
+            }
+          ],
+          "dealYield": 9305.999998023406,
+          "contributionToApy": 0.0042820233193372
+        },
+        {
+          "documentId": "99e6b436-8af9-4831-9460-ed1444a8cd5f",
+          "type": "DEAL",
+          "name": "RTX PRO 6000 [1]",
+          "chain": 42161,
+          "borrower": "0xe277b53c60c43012394d52b5f21c6d5c08ca0eb9",
+          "stage": 6,
+          "escrowed": null,
+          "locationName": "Montreal, CA",
+          "locationLongitude": -73,
+          "locationLatitude": 45,
+          "amount": "77550000000000000000000",
+          "term": 93312000,
+          "apr": 13.499999997451201,
+          "offTake": 0,
+          "group": "RTX PRO 6000 [7]",
+          "hardware": [
+            {
+              "name": "RTX PRO 6000 Blackwell",
+              "percentage": 100,
+              "count": 1
+            }
+          ],
+          "dealYield": 9305.999998023406,
+          "contributionToApy": 0.0042820233193372
+        },
+        {
+          "documentId": "9579a6d7-afe2-46a5-9d70-5fcf1c1ca76c",
+          "type": "DEAL",
+          "name": "H200 [75]",
+          "chain": 42161,
+          "borrower": "0xefc645aef6c484adb71fe02e94e9519bb8cde332",
+          "stage": 6,
+          "escrowed": null,
+          "locationName": "MO, USA",
+          "locationLongitude": -94,
+          "locationLatitude": 39,
+          "amount": "16395614336000000000000000",
+          "term": 93312000,
+          "apr": 11.9999999966832,
+          "offTake": 2,
+          "group": null,
+          "hardware": [
+            {
+              "name": "H200",
+              "percentage": 100,
+              "count": 75
+            }
+          ],
+          "dealYield": 1721539.5047361904,
+          "contributionToApy": 0.7921418768543225
+        },
+        {
+          "documentId": "e1e35ee3-7bce-4a87-b19e-0a0176d76808",
+          "type": "DEAL",
+          "name": "RTX PRO 6000 [3]",
+          "chain": 42161,
+          "borrower": "0x45b3091f31b1dc9f577e03973bb6de4c77a894d3",
+          "stage": 6,
+          "escrowed": null,
+          "locationName": "TX, USA",
+          "locationLongitude": -95,
+          "locationLatitude": 30,
+          "amount": "196524000000000000000000",
+          "term": 93312000,
+          "apr": 14.999999995065599,
+          "offTake": 2,
+          "group": null,
+          "hardware": [
+            {
+              "name": "RTX PRO 6000",
+              "percentage": 100,
+              "count": 3
+            }
+          ],
+          "dealYield": 26530.739990302714,
+          "contributionToApy": 0.012207742031149578
+        },
+        {
+          "documentId": "272b03c1-5460-4f16-8be5-5bc36b70189d",
+          "type": "DEAL",
+          "name": "H200 [4]",
+          "chain": 42161,
+          "borrower": "0x672643ad5a5db85ae9cdecc2fd0dd1b5da6bbe31",
+          "stage": 6,
+          "escrowed": null,
+          "locationName": "Montreal, CA",
+          "locationLongitude": -73,
+          "locationLatitude": 45,
+          "amount": "525875923531000000000000",
+          "term": 75168000,
+          "apr": 11.9999999966832,
+          "offTake": 0,
+          "group": null,
+          "hardware": [
+            {
+              "name": "H200",
+              "percentage": 100,
+              "count": 4
+            }
+          ],
+          "dealYield": 55216.97195331276,
+          "contributionToApy": 0.02540730298490149
+        },
+        {
+          "documentId": "32cdff2f-ff87-4a4d-95c2-d3a550a25ec6",
+          "type": "DEAL",
+          "name": "RTX PRO 6000 [1]",
+          "chain": 42161,
+          "borrower": "0xe277b53c60c43012394d52b5f21c6d5c08ca0eb9",
+          "stage": 6,
+          "escrowed": null,
+          "locationName": "Montreal, CA",
+          "locationLongitude": -73,
+          "locationLatitude": 45,
+          "amount": "77587500000000000000000",
+          "term": 93312000,
+          "apr": 13.5000225519984,
+          "offTake": 0,
+          "group": "RTX PRO 6000 [7]",
+          "hardware": [
+            {
+              "name": "RTX PRO 6000 Blackwell",
+              "percentage": 100,
+              "count": 1
+            }
+          ],
+          "dealYield": 9310.517497531759,
+          "contributionToApy": 0.004284101982376526
+        },
+        {
+          "documentId": "6d96aa78-322c-4890-bd76-99315c5100f5",
+          "type": "DEAL",
+          "name": "RTX 5090 [1]",
+          "chain": 42161,
+          "borrower": "0x7b79dfbc125e8284432907fa3ba15f63843d4462",
+          "stage": 6,
+          "escrowed": null,
+          "locationName": "New York, USA",
+          "locationLongitude": -74,
+          "locationLatitude": 41,
+          "amount": "29510190000000000000000",
+          "term": 85536000,
+          "apr": 14.9999998941504,
+          "offTake": 0,
+          "group": "RTX 5090 [15]",
+          "hardware": [
+            {
+              "name": "RTX 5090",
+              "percentage": 100,
+              "count": 1
+            }
+          ],
+          "dealYield": 3983.8756187635818,
+          "contributionToApy": 0.0018331236089090819
+        },
+        {
+          "documentId": "f0a3097c-4da1-4a83-bade-ec2aa2fd3247",
+          "type": "DEAL",
+          "name": "B300 [9] / RTX PRO 6000 [18]",
+          "chain": 42161,
+          "borrower": "0xefc645aef6c484adb71fe02e94e9519bb8cde332",
+          "stage": 6,
+          "escrowed": null,
+          "locationName": "PA, USA",
+          "locationLongitude": -77,
+          "locationLatitude": 41,
+          "amount": "4282443617464000000000000",
+          "term": 93312000,
+          "apr": 11.9999999966832,
+          "offTake": 2,
+          "group": null,
+          "hardware": [
+            {
+              "name": "B300",
+              "percentage": 69,
+              "count": 9
+            },
+            {
+              "name": "RTX PRO 6000",
+              "percentage": 31,
+              "count": 18
+            }
+          ],
+          "dealYield": 449656.57969168003,
+          "contributionToApy": 0.20690306902451575
+        },
+        {
+          "documentId": "4d92ce32-a41a-4a04-9a48-e40dd3806448",
+          "type": "DEAL",
+          "name": "B200 [8]",
+          "chain": 42161,
+          "borrower": "0x8db66b7de0aad23bf724d2c2f7672d40da122fb9",
+          "stage": 6,
+          "escrowed": null,
+          "locationName": "France",
+          "locationLongitude": 5,
+          "locationLatitude": 46,
+          "amount": "2296940100000000000000000",
+          "term": 93312000,
+          "apr": 14.999999995065599,
+          "offTake": 0,
+          "group": null,
+          "hardware": [
+            {
+              "name": "B200",
+              "percentage": 100,
+              "count": 1
+            }
+          ],
+          "dealYield": 310086.91338665975,
+          "contributionToApy": 0.1426820754808721
+        },
+        {
+          "documentId": "491f9b29-d2b8-45c7-b7ad-3884b6a81467",
+          "type": "DEAL",
+          "name": "RTX PRO 6000 [1]",
+          "chain": 42161,
+          "borrower": "0xe277b53c60c43012394d52b5f21c6d5c08ca0eb9",
+          "stage": 6,
+          "escrowed": null,
+          "locationName": "Montreal, CA",
+          "locationLongitude": -73,
+          "locationLatitude": 45,
+          "amount": "77587500000000000000000",
+          "term": 93312000,
+          "apr": 13.5000225519984,
+          "offTake": 0,
+          "group": "RTX PRO 6000 [7]",
+          "hardware": [
+            {
+              "name": "RTX PRO 6000 Blackwell",
+              "percentage": 100,
+              "count": 1
+            }
+          ],
+          "dealYield": 9310.517497531759,
+          "contributionToApy": 0.004284101982376526
+        },
+        {
+          "documentId": "9316028c-710d-4f10-ad79-414317c0d2a7",
+          "type": "DEAL",
+          "name": "RTX PRO 6000 [1]",
+          "chain": 42161,
+          "borrower": "0xe277b53c60c43012394d52b5f21c6d5c08ca0eb9",
+          "stage": 6,
+          "escrowed": null,
+          "locationName": "Montreal, CA",
+          "locationLongitude": -73,
+          "locationLatitude": 45,
+          "amount": "77587500000000000000000",
+          "term": 93312000,
+          "apr": 13.5000225519984,
+          "offTake": 0,
+          "group": "RTX PRO 6000 [7]",
+          "hardware": [
+            {
+              "name": "RTX PRO 6000 Blackwell",
+              "percentage": 100,
+              "count": 1
+            }
+          ],
+          "dealYield": 9310.517497531759,
+          "contributionToApy": 0.004284101982376526
+        },
+        {
+          "documentId": "1799966f-1e60-4e7d-b13b-899a83d2375c",
+          "type": "DEAL",
+          "name": "RTX PRO 6000 [1]",
+          "chain": 42161,
+          "borrower": "0xe277b53c60c43012394d52b5f21c6d5c08ca0eb9",
+          "stage": 6,
+          "escrowed": null,
+          "locationName": "Montreal, CA",
+          "locationLongitude": -73,
+          "locationLatitude": 45,
+          "amount": "77587500000000000000000",
+          "term": 93312000,
+          "apr": 13.5000225519984,
+          "offTake": 0,
+          "group": "RTX PRO 6000 [7]",
+          "hardware": [
+            {
+              "name": "RTX PRO 6000 Blackwell",
+              "percentage": 100,
+              "count": 1
+            }
+          ],
+          "dealYield": 9310.517497531759,
+          "contributionToApy": 0.004284101982376526
+        },
+        {
+          "documentId": "13bdaf8d-07b7-4aca-9625-96037b9f6dec",
+          "type": "DEAL",
+          "name": "B300 [72]",
+          "chain": 42161,
+          "borrower": "0xaae6fe82cc9fffa0871bdc94a7e95b720cf925b0",
+          "stage": 6,
+          "escrowed": null,
+          "locationName": "WA, USA",
+          "locationLongitude": -117,
+          "locationLatitude": 48,
+          "amount": "26821643812986000000000000",
+          "term": 93312000,
+          "apr": 9.9999999956592,
+          "offTake": 0,
+          "group": null,
+          "hardware": [
+            {
+              "name": "B300",
+              "percentage": 100,
+              "count": 72
+            }
+          ],
+          "dealYield": 2279839.7229395364,
+          "contributionToApy": 1.0490357683270874
+        },
+        {
+          "documentId": "adaf4fa5-8a90-43de-a60e-d4a6d3738563",
+          "type": "DEAL",
+          "name": "RTX 5090 [1]",
+          "chain": 42161,
+          "borrower": "0x7b79dfbc125e8284432907fa3ba15f63843d4462",
+          "stage": 6,
+          "escrowed": null,
+          "locationName": "New York, USA",
+          "locationLongitude": -74,
+          "locationLatitude": 41,
+          "amount": "29510190000000000000000",
+          "term": 85536000,
+          "apr": 14.9999998941504,
+          "offTake": 0,
+          "group": "RTX 5090 [15]",
+          "hardware": [
+            {
+              "name": "RTX 5090",
+              "percentage": 100,
+              "count": 1
+            }
+          ],
+          "dealYield": 3983.8756187635818,
+          "contributionToApy": 0.0018331236089090819
+        },
+        {
+          "documentId": "d65abb6c-6a1e-4e78-b68a-ee3fb3143786",
+          "type": "DEAL",
+          "name": "B200 [38] / H200 [10]",
+          "chain": 42161,
+          "borrower": "0xc991b09a2b6ca5bcf88780d657a3ffdde2205398",
+          "stage": 6,
+          "escrowed": null,
+          "locationName": "TX, USA",
+          "locationLongitude": -95,
+          "locationLatitude": 30,
+          "amount": "9800000000000000000000000",
+          "term": 93312000,
+          "apr": 11.5000000468848,
+          "offTake": 0,
+          "group": null,
+          "hardware": [
+            {
+              "name": "B200",
+              "percentage": 85,
+              "count": 38
+            },
+            {
+              "name": "H200",
+              "percentage": 15,
+              "count": 10
+            }
+          ],
+          "dealYield": 980000.0045947103,
+          "contributionToApy": 0.4509330403520765
+        },
+        {
+          "documentId": "ef3c6dea-cf6d-437d-83c5-d44f6ae56091",
+          "type": "DEAL",
+          "name": "RTX PRO 6000 [1]",
+          "chain": 42161,
+          "borrower": "0xe277b53c60c43012394d52b5f21c6d5c08ca0eb9",
+          "stage": 6,
+          "escrowed": null,
+          "locationName": "Montreal, CA",
+          "locationLongitude": -73,
+          "locationLatitude": 45,
+          "amount": "77550000000000000000000",
+          "term": 93312000,
+          "apr": 13.499999997451201,
+          "offTake": 0,
+          "group": "RTX PRO 6000 [7]",
+          "hardware": [
+            {
+              "name": "RTX PRO 6000 Blackwell",
+              "percentage": 100,
+              "count": 1
+            }
+          ],
+          "dealYield": 9305.999998023406,
+          "contributionToApy": 0.0042820233193372
+        },
+        {
+          "documentId": "4e9b7f0c-fea9-498a-9175-9d0ffe170a81",
+          "type": "DEAL",
+          "name": "RTX 5090 [1]",
+          "chain": 42161,
+          "borrower": "0x7b79dfbc125e8284432907fa3ba15f63843d4462",
+          "stage": 6,
+          "escrowed": null,
+          "locationName": "New York, USA",
+          "locationLongitude": -74,
+          "locationLatitude": 41,
+          "amount": "29510190000000000000000",
+          "term": 85536000,
+          "apr": 14.9999998941504,
+          "offTake": 0,
+          "group": "RTX 5090 [15]",
+          "hardware": [
+            {
+              "name": "RTX 5090",
+              "percentage": 100,
+              "count": 1
+            }
+          ],
+          "dealYield": 3983.8756187635818,
+          "contributionToApy": 0.0018331236089090819
+        },
+        {
+          "documentId": "f6f702a0-b3cc-44d2-bb90-fe5c81c0b8bb",
+          "type": "DEAL",
+          "name": "RTX 5090 [1]",
+          "chain": 42161,
+          "borrower": "0x7b79dfbc125e8284432907fa3ba15f63843d4462",
+          "stage": 6,
+          "escrowed": null,
+          "locationName": "New York, USA",
+          "locationLongitude": -74,
+          "locationLatitude": 41,
+          "amount": "29510190000000000000000",
+          "term": 85536000,
+          "apr": 14.9999998941504,
+          "offTake": 0,
+          "group": "RTX 5090 [15]",
+          "hardware": [
+            {
+              "name": "RTX 5090",
+              "percentage": 100,
+              "count": 1
+            }
+          ],
+          "dealYield": 3983.8756187635818,
+          "contributionToApy": 0.0018331236089090819
+        },
+        {
+          "documentId": "c3cbd752-2e11-4b91-9076-3ace9c1a0a2a",
+          "type": "DEAL",
+          "name": "RTX 5090 [1]",
+          "chain": 42161,
+          "borrower": "0x7b79dfbc125e8284432907fa3ba15f63843d4462",
+          "stage": 6,
+          "escrowed": null,
+          "locationName": "New York, USA",
+          "locationLongitude": -74,
+          "locationLatitude": 41,
+          "amount": "29510190000000000000000",
+          "term": 85536000,
+          "apr": 14.9999998941504,
+          "offTake": 0,
+          "group": "RTX 5090 [15]",
+          "hardware": [
+            {
+              "name": "RTX 5090",
+              "percentage": 100,
+              "count": 1
+            }
+          ],
+          "dealYield": 3983.8756187635818,
+          "contributionToApy": 0.0018331236089090819
+        },
+        {
+          "documentId": "1d75fbf1-5720-4416-a124-8c0961e357d1",
+          "type": "DEAL",
+          "name": "RTX 5090 [1]",
+          "chain": 42161,
+          "borrower": "0x7b79dfbc125e8284432907fa3ba15f63843d4462",
+          "stage": 6,
+          "escrowed": null,
+          "locationName": "New York, USA",
+          "locationLongitude": -74,
+          "locationLatitude": 41,
+          "amount": "29510190000000000000000",
+          "term": 85536000,
+          "apr": 14.9999998941504,
+          "offTake": 0,
+          "group": "RTX 5090 [15]",
+          "hardware": [
+            {
+              "name": "RTX 5090",
+              "percentage": 100,
+              "count": 1
+            }
+          ],
+          "dealYield": 3983.8756187635818,
+          "contributionToApy": 0.0018331236089090819
+        },
+        {
+          "documentId": "7c8ed785-9075-4257-b859-5dff70431b2c",
+          "type": "DEAL",
+          "name": "RTX 5090 [1]",
+          "chain": 42161,
+          "borrower": "0x7b79dfbc125e8284432907fa3ba15f63843d4462",
+          "stage": 6,
+          "escrowed": null,
+          "locationName": "New York, USA",
+          "locationLongitude": -74,
+          "locationLatitude": 41,
+          "amount": "29510190000000000000000",
+          "term": 85536000,
+          "apr": 14.9999998941504,
+          "offTake": 0,
+          "group": "RTX 5090 [15]",
+          "hardware": [
+            {
+              "name": "RTX 5090",
+              "percentage": 100,
+              "count": 1
+            }
+          ],
+          "dealYield": 3983.8756187635818,
+          "contributionToApy": 0.0018331236089090819
+        },
+        {
+          "documentId": "3fb61ee4-c2ab-4c5b-a288-41a4abc8762b",
+          "type": "DEAL",
+          "name": "RTX 5090 [1]",
+          "chain": 42161,
+          "borrower": "0x7b79dfbc125e8284432907fa3ba15f63843d4462",
+          "stage": 6,
+          "escrowed": null,
+          "locationName": "New York, USA",
+          "locationLongitude": -74,
+          "locationLatitude": 41,
+          "amount": "29510190000000000000000",
+          "term": 85536000,
+          "apr": 14.9999998941504,
+          "offTake": 0,
+          "group": "RTX 5090 [15]",
+          "hardware": [
+            {
+              "name": "RTX 5090",
+              "percentage": 100,
+              "count": 1
+            }
+          ],
+          "dealYield": 3983.8756187635818,
+          "contributionToApy": 0.0018331236089090819
+        },
+        {
+          "documentId": "6136a59b-6dcd-47e7-a3e3-2a6dc57dbbf8",
+          "type": "DEAL",
+          "name": "RTX 5090 [1]",
+          "chain": 42161,
+          "borrower": "0x7b79dfbc125e8284432907fa3ba15f63843d4462",
+          "stage": 6,
+          "escrowed": null,
+          "locationName": "New York, USA",
+          "locationLongitude": -74,
+          "locationLatitude": 41,
+          "amount": "29510190000000000000000",
+          "term": 85536000,
+          "apr": 14.9999998941504,
+          "offTake": 0,
+          "group": "RTX 5090 [15]",
+          "hardware": [
+            {
+              "name": "RTX 5090",
+              "percentage": 100,
+              "count": 1
+            }
+          ],
+          "dealYield": 3983.8756187635818,
+          "contributionToApy": 0.0018331236089090819
+        },
+        {
+          "documentId": "6bc7e1a7-f044-448e-8b04-4a0bfbfc9a13",
+          "type": "DEAL",
+          "name": "RTX 5090 [1]",
+          "chain": 42161,
+          "borrower": "0x7b79dfbc125e8284432907fa3ba15f63843d4462",
+          "stage": 6,
+          "escrowed": null,
+          "locationName": "New York, USA",
+          "locationLongitude": -74,
+          "locationLatitude": 41,
+          "amount": "29510190000000000000000",
+          "term": 85536000,
+          "apr": 14.9999998941504,
+          "offTake": 0,
+          "group": "RTX 5090 [15]",
+          "hardware": [
+            {
+              "name": "RTX 5090",
+              "percentage": 100,
+              "count": 1
+            }
+          ],
+          "dealYield": 3983.8756187635818,
+          "contributionToApy": 0.0018331236089090819
+        },
+        {
+          "documentId": "0489afb3-018f-49f3-b769-4f7a9081fc5b",
+          "type": "DEAL",
+          "name": "RTX 5090 [1]",
+          "chain": 42161,
+          "borrower": "0x7b79dfbc125e8284432907fa3ba15f63843d4462",
+          "stage": 6,
+          "escrowed": null,
+          "locationName": "New York, USA",
+          "locationLongitude": -74,
+          "locationLatitude": 41,
+          "amount": "29510190000000000000000",
+          "term": 85536000,
+          "apr": 14.9999998941504,
+          "offTake": 0,
+          "group": "RTX 5090 [15]",
+          "hardware": [
+            {
+              "name": "RTX 5090",
+              "percentage": 100,
+              "count": 1
+            }
+          ],
+          "dealYield": 3983.8756187635818,
+          "contributionToApy": 0.0018331236089090819
+        },
+        {
+          "documentId": "270645db-4902-4de5-a758-6bca30be2240",
+          "type": "DEAL",
+          "name": "RTX 5090 [1]",
+          "chain": 42161,
+          "borrower": "0x7b79dfbc125e8284432907fa3ba15f63843d4462",
+          "stage": 6,
+          "escrowed": null,
+          "locationName": "New York, USA",
+          "locationLongitude": -74,
+          "locationLatitude": 41,
+          "amount": "29510190000000000000000",
+          "term": 85536000,
+          "apr": 14.9999998941504,
+          "offTake": 0,
+          "group": "RTX 5090 [15]",
+          "hardware": [
+            {
+              "name": "RTX 5090",
+              "percentage": 100,
+              "count": 1
+            }
+          ],
+          "dealYield": 3983.8756187635818,
+          "contributionToApy": 0.0018331236089090819
+        },
+        {
+          "documentId": "6cf808d4-ed17-40b5-8736-f2416c76b7ec",
+          "type": "DEAL",
+          "name": "RTX 5090 [1]",
+          "chain": 42161,
+          "borrower": "0x7b79dfbc125e8284432907fa3ba15f63843d4462",
+          "stage": 6,
+          "escrowed": null,
+          "locationName": "New York, USA",
+          "locationLongitude": -74,
+          "locationLatitude": 41,
+          "amount": "29510190000000000000000",
+          "term": 85536000,
+          "apr": 14.9999998941504,
+          "offTake": 0,
+          "group": "RTX 5090 [15]",
+          "hardware": [
+            {
+              "name": "RTX 5090",
+              "percentage": 100,
+              "count": 1
+            }
+          ],
+          "dealYield": 3983.8756187635818,
+          "contributionToApy": 0.0018331236089090819
+        },
+        {
+          "documentId": "1c48d2f0-5758-4d09-93a7-6ae0dd5a4b98",
+          "type": "DEAL",
+          "name": "RTX 5090 [1]",
+          "chain": 42161,
+          "borrower": "0x7b79dfbc125e8284432907fa3ba15f63843d4462",
+          "stage": 6,
+          "escrowed": null,
+          "locationName": "New York, USA",
+          "locationLongitude": -74,
+          "locationLatitude": 41,
+          "amount": "29510190000000000000000",
+          "term": 85536000,
+          "apr": 14.9999998941504,
+          "offTake": 0,
+          "group": "RTX 5090 [15]",
+          "hardware": [
+            {
+              "name": "RTX 5090",
+              "percentage": 100,
+              "count": 1
+            }
+          ],
+          "dealYield": 3983.8756187635818,
+          "contributionToApy": 0.0018331236089090819
+        },
+        {
+          "documentId": "d9fb8748-d875-4995-9f85-05fd223935c7",
+          "type": "DEAL",
+          "name": "RTX 5090 [1] ",
+          "chain": 42161,
+          "borrower": "0x7b79dfbc125e8284432907fa3ba15f63843d4462",
+          "stage": 6,
+          "escrowed": null,
+          "locationName": "New York, USA",
+          "locationLongitude": -74,
+          "locationLatitude": 41,
+          "amount": "29510190000000000000000",
+          "term": 85536000,
+          "apr": 14.9999998941504,
+          "offTake": 0,
+          "group": "RTX 5090 [15]",
+          "hardware": [
+            {
+              "name": "RTX 5090",
+              "percentage": 100,
+              "count": 1
+            }
+          ],
+          "dealYield": 3983.8756187635818,
+          "contributionToApy": 0.0018331236089090819
+        },
+        {
+          "documentId": "d222c0a2-3561-4193-b79e-cce806a6812d",
+          "type": "DEAL",
+          "name": "B200 [32]",
+          "chain": 42161,
+          "borrower": "0xc991b09a2b6ca5bcf88780d657a3ffdde2205398",
+          "stage": 2,
+          "escrowed": "offchain",
+          "locationName": "TX, USA",
+          "locationLongitude": -95,
+          "locationLatitude": 30,
+          "amount": "11295783000000000000000000",
+          "term": 93312000,
+          "apr": 11.999999999836799,
+          "offTake": 2,
+          "group": null,
+          "hardware": [
+            {
+              "name": "B200",
+              "percentage": 100,
+              "count": 32
+            }
+          ],
+          "escrow": {
+            "amount": "4200000000000000000000000",
+            "apr": 6.9999999972768,
+            "originationDate": 1777334400,
+            "manufacturer": "Supermicro"
+          },
+          "dealYield": 1024609.613114847,
+          "contributionToApy": 0.18574607842297414
+        },
+        {
+          "documentId": "e389cf77-f0c2-49d3-9aab-7902703952d7",
+          "type": "DEAL",
+          "name": "B300 [170]",
+          "chain": 42161,
+          "borrower": "0x924370feda384b89404091bebf13a8368d241960",
+          "stage": 1,
+          "escrowed": null,
+          "locationName": "France",
+          "locationLongitude": 5,
+          "locationLatitude": 46,
+          "amount": "56000000000000000000000000",
+          "term": 155520000,
+          "apr": 6.9999999972768,
+          "offTake": 2,
+          "group": null,
+          "hardware": [
+            {
+              "name": "B300",
+              "percentage": 100,
+              "count": 170
+            }
+          ],
+          "dealYield": 2660746.519619003,
+          "contributionToApy": 0.482352717923807
+        },
+        {
+          "documentId": "1044981c-55a0-4855-8dc3-e7741f7e6036",
+          "type": "DEAL",
+          "name": "B300 [24]",
+          "chain": 42161,
+          "borrower": "0x924370feda384b89404091bebf13a8368d241960",
+          "stage": 1,
+          "escrowed": null,
+          "locationName": "NE, USA",
+          "locationLongitude": -95.9345,
+          "locationLatitude": 41.2565,
+          "amount": "8418900000000000000000000",
+          "term": 93312000,
+          "apr": 11.999999999836799,
+          "offTake": 0,
+          "group": null,
+          "hardware": [
+            {
+              "name": "B300",
+              "percentage": 100,
+              "count": 24
+            }
+          ],
+          "dealYield": 763655.4165260243,
+          "contributionToApy": 0.13843906700714564
+        },
+        {
+          "documentId": "d7739818-1236-47db-8da0-4d5bf47aee20",
+          "type": "DEAL",
+          "name": "B200 [96]",
+          "chain": 42161,
+          "borrower": "0x034d28a39c5c48aaca4d87e7775fe202f6cbfc6b",
+          "stage": 1,
+          "escrowed": "offchain",
+          "locationName": "Sweden",
+          "locationLongitude": 18,
+          "locationLatitude": 59,
+          "amount": "34055508000000000000000000",
+          "term": 93312000,
+          "apr": 11.999999999836799,
+          "offTake": 2,
+          "group": null,
+          "hardware": [
+            {
+              "name": "B200",
+              "percentage": 100,
+              "count": 96
+            }
+          ],
+          "escrow": {
+            "amount": "10300000000000000000000000",
+            "apr": 4.9999999994064,
+            "originationDate": 1777420800,
+            "manufacturer": "Lenovo"
+          },
+          "dealYield": 3089082.0827834224,
+          "contributionToApy": 0.5600034154075217
+        },
+        {
+          "documentId": "b8629c4f-37df-466c-ad6d-60b9e25e0a62",
+          "type": "DEAL",
+          "name": "B300 [128]",
+          "chain": 42161,
+          "borrower": "0x924370feda384b89404091bebf13a8368d241960",
+          "stage": 1,
+          "escrowed": null,
+          "locationName": "OH, USA",
+          "locationLongitude": -82.9988,
+          "locationLatitude": 36.9612,
+          "amount": "53672248000000000000000000",
+          "term": 93312000,
+          "apr": 9.9999999988128,
+          "offTake": 2,
+          "group": null,
+          "hardware": [
+            {
+              "name": "B300",
+              "percentage": 100,
+              "count": 128
+            }
+          ],
+          "dealYield": 3941136.689914176,
+          "contributionToApy": 0.7144679059324858
+        },
+        {
+          "documentId": "1d4543db-9cc0-4e86-af37-1a5fd96dfce1",
+          "type": "DEAL",
+          "name": "B300 [288]",
+          "chain": 42161,
+          "borrower": "0x034d28a39c5c48aaca4d87e7775fe202f6cbfc6b",
+          "stage": 2,
+          "escrowed": "onchain",
+          "locationName": "GA, USA",
+          "locationLongitude": -84.94,
+          "locationLatitude": 32.47,
+          "amount": "98135008280000000000000000",
+          "term": 93312000,
+          "apr": 11.9999999966832,
+          "offTake": 0,
+          "group": null,
+          "hardware": [
+            {
+              "name": "B300",
+              "percentage": 100,
+              "count": 288
+            }
+          ],
+          "dealYield": 8901558.469792986,
+          "contributionToApy": 1.613716635539244
+        },
+        {
+          "documentId": "b3971fe6-d50b-48c1-bb86-ce21e46031c1",
+          "type": "DEAL",
+          "name": "B200 [16]",
+          "chain": 42161,
+          "borrower": "0x924370feda384b89404091bebf13a8368d241960",
+          "stage": 2,
+          "escrowed": null,
+          "locationName": "DE, USA",
+          "locationLongitude": -75,
+          "locationLatitude": 39,
+          "amount": "5453655790000000000000000",
+          "term": 93312000,
+          "apr": 9.9999999956592,
+          "offTake": 2,
+          "group": null,
+          "hardware": [
+            {
+              "name": "B200",
+              "percentage": 100,
+              "count": 16
+            }
+          ],
+          "dealYield": 400460.2698988405,
+          "contributionToApy": 0.07259733243355568
+        },
+        {
+          "documentId": "f09782cd-9d9c-4766-b1d7-58af4c7ff0d2",
+          "type": "DEAL",
+          "name": "B300 [16] / RTX 6000 [53]",
+          "chain": 42161,
+          "borrower": "0xefc645aef6c484adb71fe02e94e9519bb8cde332",
+          "stage": 4,
+          "escrowed": null,
+          "locationName": "PA, USA",
+          "locationLongitude": -77,
+          "locationLatitude": 41,
+          "amount": "9500982000000000000000000",
+          "term": 93312000,
+          "apr": 11.999999999836799,
+          "offTake": 0,
+          "group": null,
+          "hardware": [
+            {
+              "name": "B300",
+              "percentage": 69,
+              "count": 16
+            },
+            {
+              "name": "RTX PRO 6000",
+              "percentage": 31,
+              "count": 53
+            }
+          ],
+          "dealYield": 861808.118235905,
+          "contributionToApy": 0.1562326531651029
+        },
+        {
+          "documentId": "8049bb16-c55b-4ed9-9b59-a48b29ddfbb1",
+          "type": "DEAL",
+          "name": "B300 [128]",
+          "chain": 42161,
+          "borrower": "0x85fe1a32bbbe2e97acc740755642d75257a64187",
+          "stage": 2,
+          "escrowed": null,
+          "locationName": "NSW, Australia",
+          "locationLongitude": 151,
+          "locationLatitude": -33,
+          "amount": "62259200000000000000000000",
+          "term": 93312000,
+          "apr": 14.999999998219199,
+          "offTake": 2,
+          "group": null,
+          "hardware": [
+            {
+              "name": "B300",
+              "percentage": 100,
+              "count": 128
+            }
+          ],
+          "dealYield": 7260893.902450766,
+          "contributionToApy": 1.316289200259868
+        }
+      ],
+      "breakdown": {
+        "active": {
+          "amount": 61304694.63998097,
+          "count": 9,
+          "apy": 2.7367902070760817
+        },
+        "committed": {
+          "amount": 400095979.709981,
+          "count": 9,
+          "apy": 5.239845006091706
+        },
+        "termSheetExecuted": {
+          "amount": 195304985.79000002,
+          "count": 6,
+          "apy": 2.8803788767219647
+        },
+        "escrowed": {
+          "amount": 45351291,
+          "count": 2,
+          "apy": 0.7457494938304958
+        },
+        "reserved": {
+          "amount": 98135008.28,
+          "count": 1,
+          "apy": 1.613716635539244
+        }
+      },
+      "pyusd": {
+        "amount": 289139028.126023,
+        "apy": 4.5,
+        "contributionToApy": 4.333209792923923
+      }
+    }
+  },
+  "fetched_at": "2026-05-27T19:27:28.607627+00:00"
+}

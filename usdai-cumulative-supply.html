@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>USDai Cumulative Supply</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+  @font-face {
+    font-family: 'PP Eiko';
+    src: url('https://db.onlinewebfonts.com/t/6b2d532d2a62dade858748f086e69043.woff2') format('woff2'),
+         url('https://db.onlinewebfonts.com/t/6b2d532d2a62dade858748f086e69043.woff') format('woff');
+    font-weight: 500; font-style: normal; font-display: swap;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #FFFFFF;
+    display: flex; justify-content: center; align-items: center;
+    min-height: 100vh;
+    font-family: 'Geist', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: #2C2622; padding: 40px;
+  }
+  .container { width: 100%; max-width: 1100px; }
+  h1 {
+    font-family: 'PP Eiko', Georgia, serif;
+    font-size: 22px; font-weight: 600;
+    letter-spacing: 0.2px; color: #2C2622; margin-bottom: 24px;
+  }
+  .chart-wrapper { position: relative; width: 100%; height: 460px; }
+  .footer {
+    display: flex; align-items: center;
+    justify-content: space-between; margin-top: 16px;
+  }
+  .attribution { font-size: 11px; color: #B8AA98; letter-spacing: 0.3px; }
+  .legend { display: flex; gap: 24px; }
+  .legend-item {
+    display: flex; align-items: center; gap: 8px;
+    font-size: 12px; color: #6F5F4E;
+  }
+  .legend-swatch {
+    width: 24px; height: 12px; border-radius: 3px; flex-shrink: 0;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>USDai Cumulative Primary Market Volume — 2026 YTD</h1>
+  <div class="chart-wrapper"><canvas id="chart"></canvas></div>
+  <div class="footer">
+    <span class="attribution">Source: Allium</span>
+    <div class="legend" id="legend"></div>
+  </div>
+</div>
+
+<script>
+// ── Colors ────────────────────────────────────────────────────────
+const COLORS = {
+  mints:  '#2AB5A6',
+  burns:  '#C4613A',
+  netYTD: '#2C2622',
+  grid:   'rgba(0,0,0,0.06)',
+  zero:   'rgba(0,0,0,0.22)',
+};
+
+// ── 2026 data: [date, mints_M, burns_M] ──────────────────────────
+const raw = [
+["2026-01-01", 2.5004, 0.1356],
+["2026-01-02", 1.6084, 0.3737],
+["2026-01-03", 7.1801, 1.1268],
+["2026-01-04", 0.8711, 0.5381],
+["2026-01-05", 0.3682, 1.8523],
+["2026-01-06", 2.0783, 0.1034],
+["2026-01-07", 0.9257, 0.2161],
+["2026-01-08", 1.9696, 0.1059],
+["2026-01-09", 0.556, 0.0413],
+["2026-01-10", 1.1722, 0.0552],
+["2026-01-11", 1.2992, 0.3735],
+["2026-01-12", 2.96, 0.9659],
+["2026-01-13", 2.294, 2.6229],
+["2026-01-14", 1.0991, 1.5812],
+["2026-01-15", 0.2746, 1.271],
+["2026-01-16", 0.9854, 1.3566],
+["2026-01-17", 0.006, 0.0164],
+["2026-01-18", 0.3149, 0.3998],
+["2026-01-19", 2.2485, 1.9311],
+["2026-01-20", 9.6802, 9.7171],
+["2026-01-21", 0.1757, 3.7372],
+["2026-01-22", 1.495, 5.7155],
+["2026-01-23", 4.0316, 7.5512],
+["2026-01-24", 1.0659, 1.8551],
+["2026-01-25", 2.4081, 2.8032],
+["2026-01-26", 1.0224, 0.5491],
+["2026-01-27", 1.0016, 0.0205],
+["2026-01-28", 10.3344, 2.4443],
+["2026-01-29", 6.0418, 9.5945],
+["2026-01-30", 2.3309, 7.7873],
+["2026-01-31", 0.9248, 6.0561],
+["2026-02-01", 1.1684, 5.1731],
+["2026-02-02", 13.755, 1.9831],
+["2026-02-03", 0.153, 1.4036],
+["2026-02-04", 5.4382, 10.1421],
+["2026-02-05", 3.5509, 42.0202],
+["2026-02-06", 4.526, 18.7326],
+["2026-02-07", 0.8085, 0.892],
+["2026-02-08", 1.2701, 5.3914],
+["2026-02-09", 0.8983, 1.0726],
+["2026-02-10", 4.1707, 2.2317],
+["2026-02-11", 3.7858, 5.2121],
+["2026-02-12", 4.9792, 3.6632],
+["2026-02-13", 1.7599, 1.8792],
+["2026-02-14", 15.8292, 0.7805],
+["2026-02-15", 0.7842, 0.561],
+["2026-02-16", 5.7254, 1.9558],
+["2026-02-17", 0.2091, 5.1177],
+["2026-02-18", 9.0161, 16.8017],
+["2026-02-19", 3.9296, 54.8634],
+["2026-02-20", 4.1789, 15.1604],
+["2026-02-21", 1.1949, 3.5003],
+["2026-02-22", 0.434, 1.5894],
+["2026-02-23", 3.2345, 12.1681],
+["2026-02-24", 1.8823, 1.6256],
+["2026-02-25", 0.5431, 4.1139],
+["2026-02-26", 4.4956, 3.3839],
+["2026-02-27", 3.698, 1.8989],
+["2026-02-28", 2.079, 1.2356],
+["2026-03-01", 1.5768, 0.733],
+["2026-03-02", 3.2615, 2.9496],
+["2026-03-03", 11.5628, 4.7198],
+["2026-03-04", 4.0054, 4.1567],
+["2026-03-05", 3.2154, 15.2929],
+["2026-03-06", 0.8199, 7.568],
+["2026-03-07", 4.7421, 107.9667],
+["2026-03-08", 1.7064, 4.0461],
+["2026-03-09", 7.3363, 13.8516],
+["2026-03-10", 2.4513, 3.2331],
+["2026-03-11", 7.8953, 2.0202],
+["2026-03-12", 12.8496, 3.1688],
+["2026-03-13", 2.0713, 1.8918],
+["2026-03-14", 1.5689, 0.4295],
+["2026-03-15", 0.3107, 0.4831],
+["2026-03-16", 0.4893, 0.6933],
+["2026-03-17", 0.2019, 1.431],
+["2026-03-18", 0.3598, 0.2976],
+["2026-03-19", 22.8843, 9.1325],
+["2026-03-20", 28.3951, 17.6725],
+["2026-03-21", 11.4636, 1.1544],
+["2026-03-22", 5.9401, 5.7994],
+["2026-03-23", 7.5567, 18.8936],
+["2026-03-24", 3.0195, 3.2587],
+["2026-03-25", 0.3509, 0.3547],
+["2026-03-26", 3.6634, 2.5265],
+["2026-03-27", 0.8474, 1.073],
+["2026-03-28", 0.2348, 0.5106],
+["2026-03-29", 0.7775, 0.32],
+["2026-03-30", 0.4106, 0.6343],
+["2026-03-31", 1.3709, 1.2705],
+["2026-04-01", 2.1874, 2.9073],
+["2026-04-02", 0.0301, 0.778],
+["2026-04-03", 0.2054, 0.2111],
+["2026-04-04", 0.0312, 0.0072],
+["2026-04-05", 0.0493, 0.0384],
+["2026-04-06", 21.0612, 91.8119],
+["2026-04-07", 25.5996, 13.9953],
+["2026-04-08", 22.9416, 0.6148],
+["2026-04-09", 5.3664, 0.49],
+["2026-04-10", 2.7843, 0.9144],
+["2026-04-11", 10.1402, 0.1464],
+["2026-04-12", 5.0582, 0.0005],
+["2026-04-13", 8.9913, 0.3918],
+["2026-04-14", 0.0032, 0.218],
+["2026-04-15", 0.4501, 0.46],
+["2026-04-16", 0.4476, 0.135],
+["2026-04-17", 0.1944, 16.6893],
+["2026-04-18", 1.2982, 0.1753],
+["2026-04-19", 0.4193, 1.8386],
+["2026-04-20", 0.0788, 0.048],
+["2026-04-21", 0.1376, 1.366],
+["2026-04-22", 2.4672, 1.3038],
+["2026-04-23", 0.2141, 0.0942],
+["2026-04-24", 1.3664, 0.0573],
+["2026-04-25", 0.1907, 0.1557],
+["2026-04-26", 0.5862, 0.0257],
+["2026-04-27", 0.83, 0.0307],
+["2026-04-28", 5.971, 0.3378],
+["2026-04-29", 1.1751, 45.4673],
+["2026-04-30", 3.2417, 0.4111],
+["2026-05-01", 0.2852, 0.0074],
+["2026-05-02", 0.2479, 0.0064],
+["2026-05-03", 0.5868, 0.0299],
+["2026-05-04", 4.534, 0.0566],
+["2026-05-05", 10.5026, 2.5931],
+["2026-05-06", 2.3586, 14.6047],
+["2026-05-07", 0.2232, 2.4284],
+["2026-05-08", 0.0713, 0.8121],
+["2026-05-09", 1.0424, 0.1508],
+["2026-05-10", 6.1329, 0.011],
+["2026-05-11", 1.9594, 0.0012],
+["2026-05-12", 0.205, 0.0287],
+["2026-05-13", 11.2015, 0.3724],
+["2026-05-14", 6.3334, 0.0838],
+["2026-05-15", 11.4744, 0.0929],
+["2026-05-16", 1.279, 0.1036],
+["2026-05-17", 0.7376, 0.0146],
+["2026-05-18", 0.0897, 0.1059],
+["2026-05-19", 0.2005, 0.0166],
+["2026-05-20", 0.5471, 0.1177],
+["2026-05-21", 2.6296, 0.5725],
+["2026-05-22", 0.7536, 0.4367],
+["2026-05-23", 0.0014, 0.0598],
+["2026-05-24", 0.0052, 0.0042],
+["2026-05-25", 1.3071, 0.0722],
+["2026-05-26", 0.0713, 0.2507],
+["2026-05-27", 0.0725, 0.1261]
+];
+
+const dates = raw.map(r => r[0]);
+
+// ── Cumulative sums (start at 0 on Jan 1) ────────────────────────
+let cMints = 0, cBurns = 0;
+const cumMints = [];
+const cumBurns = [];
+
+const netYTD = [];
+
+raw.forEach(r => {
+  cMints += r[1];
+  cBurns += r[2];
+  cumMints.push(+cMints.toFixed(4));
+  cumBurns.push(-(+cBurns.toFixed(4)));    // negative → fills below zero
+  netYTD.push(+(cMints - cBurns).toFixed(4));
+});
+
+Chart.defaults.font.family = "'Geist', 'Helvetica Neue', Helvetica, Arial, sans-serif";
+
+const ctx = document.getElementById('chart').getContext('2d');
+new Chart(ctx, {
+  type: 'line',
+  data: {
+    labels: dates,
+    datasets: [
+      {
+        label: 'Cumulative Mints',
+        data: cumMints,
+        backgroundColor: COLORS.mints + '55',
+        borderColor: COLORS.mints,
+        borderWidth: 1.5,
+        fill: 'origin',       // fills down to y = 0
+        pointRadius: 0,
+        pointHitRadius: 6,
+        tension: 0.25,
+        order: 2,
+      },
+      {
+        label: 'Cumulative Burns',
+        data: cumBurns,
+        backgroundColor: COLORS.burns + '55',
+        borderColor: COLORS.burns,
+        borderWidth: 1.5,
+        fill: 'origin',       // fills up to y = 0
+        pointRadius: 0,
+        pointHitRadius: 6,
+        tension: 0.25,
+        order: 3,
+      },
+      {
+        label: 'Net YTD',
+        data: netYTD,
+        backgroundColor: 'transparent',
+        borderColor: COLORS.netYTD,
+        borderWidth: 2,
+        borderDash: [5, 3],
+        fill: false,
+        pointRadius: 0,
+        pointHitRadius: 6,
+        tension: 0.25,
+        order: 1,
+      },
+    ],
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    interaction: { mode: 'index', intersect: false },
+    scales: {
+      x: {
+        type: 'category',
+        grid: { color: COLORS.grid, drawTicks: false },
+        border: { display: true, color: COLORS.zero },
+        ticks: {
+          color: '#8A7F74', font: { size: 11 },
+          maxRotation: 0, autoSkip: false, padding: 8,
+          callback: (_, i) => {
+            const d = new Date(dates[i]);
+            return d.getDate() === 1
+              ? d.toLocaleDateString('en-US', { month: 'short', year: 'numeric' })
+              : null;
+          },
+        },
+      },
+      y: {
+        grid: {
+          color: ctx => ctx.tick.value === 0 ? COLORS.zero : COLORS.grid,
+          lineWidth: ctx => ctx.tick.value === 0 ? 1.5 : 1,
+          drawBorder: false,
+        },
+        border: { display: false },
+        ticks: {
+          color: '#8A7F74', font: { size: 11 }, padding: 8,
+          callback: v => '$' + Math.abs(v).toFixed(0) + 'M',
+        },
+      },
+    },
+    plugins: {
+      legend: { display: false },
+      tooltip: {
+        backgroundColor: '#FFFFFF',
+        titleColor: '#2C2622', bodyColor: '#6F5F4E',
+        borderColor: 'rgba(0,0,0,0.1)', borderWidth: 1,
+        titleFont: { size: 12, weight: '600' },
+        bodyFont: { size: 12 }, padding: 12, cornerRadius: 8,
+        callbacks: {
+          title: ctx => ctx[0].label,
+          label: ctx => {
+            if (ctx.dataset.label === 'Net YTD') {
+              const v = ctx.raw.toFixed(1);
+              return `  Net YTD: ${ctx.raw >= 0 ? '+' : ''}$${v}M`;
+            }
+            const v = Math.abs(ctx.raw).toFixed(1);
+            return `  ${ctx.dataset.label}: $${v}M`;
+          },
+        }
+      },
+    },
+    layout: { padding: { top: 8, right: 4, bottom: 0, left: 0 } },
+  },
+});
+
+// ── Legend ────────────────────────────────────────────────────────
+const legendEl = document.getElementById('legend');
+[
+  { label: 'Cumulative Mints', color: COLORS.mints,  type: 'area' },
+  { label: 'Cumulative Burns', color: COLORS.burns,  type: 'area' },
+  { label: 'Net YTD',          color: COLORS.netYTD, type: 'line' },
+].forEach(s => {
+  const item = document.createElement('div');
+  item.className = 'legend-item';
+  if (s.type === 'area') {
+    item.innerHTML = `<span class="legend-swatch" style="background:${s.color}55;border:1.5px solid ${s.color}"></span><span>${s.label}</span>`;
+  } else {
+    item.innerHTML = `<span style="width:24px;height:0;border-top:2px dashed ${s.color};display:inline-block;flex-shrink:0"></span><span>${s.label}</span>`;
+  }
+  legendEl.appendChild(item);
+});
+</script>
+</body>
+</html>

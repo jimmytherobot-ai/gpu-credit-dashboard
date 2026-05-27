@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>USDai Holder Distribution</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+  @font-face {
+    font-family: 'PP Eiko';
+    src: url('https://db.onlinewebfonts.com/t/6b2d532d2a62dade858748f086e69043.woff2') format('woff2'),
+         url('https://db.onlinewebfonts.com/t/6b2d532d2a62dade858748f086e69043.woff') format('woff');
+    font-weight: 500; font-style: normal; font-display: swap;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #FFFFFF;
+    display: flex; justify-content: center; align-items: center;
+    min-height: 100vh;
+    font-family: 'Geist', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: #2C2622; padding: 40px;
+  }
+  .container { width: 100%; max-width: 1100px; }
+  h1 {
+    font-family: 'PP Eiko', Georgia, serif;
+    font-size: 22px; font-weight: 600;
+    letter-spacing: 0.2px; color: #2C2622; margin-bottom: 4px;
+  }
+  .subtitle { font-size: 12px; color: #8A7F74; margin-bottom: 32px; }
+  .chart-row {
+    display: flex;
+    align-items: center;
+    gap: 48px;
+  }
+  .chart-wrapper { flex-shrink: 0; width: 380px; height: 380px; }
+  .legend {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .legend-dot {
+    width: 12px; height: 12px;
+    border-radius: 3px;
+    flex-shrink: 0;
+  }
+  .legend-label {
+    font-size: 13px;
+    color: #2C2622;
+    font-weight: 500;
+    min-width: 130px;
+  }
+  .legend-pct {
+    font-size: 13px;
+    color: #8A7F74;
+    font-weight: 400;
+  }
+  .legend-count {
+    font-size: 11px;
+    color: #B8AA98;
+    margin-left: 2px;
+  }
+  .footer { margin-top: 20px; }
+  .attribution { font-size: 11px; color: #B8AA98; }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>USDai — Holder Distribution</h1>
+  <p class="subtitle">Excludes treasury and staking supply</p>
+
+  <div class="chart-row">
+    <div class="chart-wrapper"><canvas id="chart"></canvas></div>
+    <div class="legend" id="legend"></div>
+  </div>
+
+  <div class="footer">
+    <span class="attribution">Source: Allium</span>
+  </div>
+</div>
+
+<script>
+// ── Aggregated category data ──────────────────────────────────────
+// Deduplicated by address, grouped by category, share = fraction of total supply
+const categories = [
+  { label: 'Yield Protocols',       share: 0.64735, count: 3,    color: '#2AB5A6' },
+  { label: 'Individual Wallets',    share: 0.32279, count: 4322,    color: '#9B9488' },
+  { label: 'MEV',                   share: 0.01694, count: 96,    color: '#8C7AE6' },
+  { label: 'Named Wallets',         share: 0.00608, count: 976,    color: '#E85D88' },
+  { label: 'DEX',                   share: 0.00348, count: 21,    color: '#4DA2E8' },
+  { label: 'Lending',               share: 0.00333, count: 5,    color: '#C4613A' },
+  { label: 'Other Protocols',       share: 3e-05, count: 11,    color: '#EDE5D8' },
+];
+
+Chart.defaults.font.family = "'Geist', 'Helvetica Neue', Helvetica, Arial, sans-serif";
+
+const ctx = document.getElementById('chart').getContext('2d');
+new Chart(ctx, {
+  type: 'pie',
+  data: {
+    labels: categories.map(c => c.label),
+    datasets: [{
+      data:            categories.map(c => c.share * 100),
+      backgroundColor: categories.map(c => c.color + 'E0'),
+      borderColor:     categories.map(c => c.color),
+      borderWidth:     1.5,
+      hoverOffset:     8,
+    }],
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: true,
+    plugins: {
+      legend: { display: false },
+      tooltip: {
+        backgroundColor: '#FFFFFF',
+        titleColor: '#2C2622',
+        bodyColor: '#6F5F4E',
+        borderColor: 'rgba(0,0,0,0.1)',
+        borderWidth: 1,
+        titleFont: { size: 13, weight: '600' },
+        bodyFont: { size: 12 },
+        padding: 12,
+        cornerRadius: 8,
+        callbacks: {
+          label: ctx => {
+            const c = categories[ctx.dataIndex];
+            const pct = (c.share * 100).toFixed(3);
+            const addrs = c.count.toLocaleString();
+            return [
+              `  ${pct}% of supply`,
+              `  ${addrs} address${c.count !== 1 ? 'es' : ''}`,
+            ];
+          },
+        }
+      },
+    },
+    layout: { padding: 8 },
+  },
+});
+
+// ── Custom legend ─────────────────────────────────────────────────
+const legendEl = document.getElementById('legend');
+categories.forEach(c => {
+  const pct = (c.share * 100).toFixed(c.share >= 0.01 ? 2 : 3);
+  const item = document.createElement('div');
+  item.className = 'legend-item';
+  item.innerHTML = `
+    <span class="legend-dot" style="background:${c.color}E0;border:1.5px solid ${c.color}"></span>
+    <span class="legend-label">${c.label}</span>
+    <span class="legend-pct">${pct}%</span>
+    <span class="legend-count">(${c.count.toLocaleString()})</span>
+  `;
+  legendEl.appendChild(item);
+});
+</script>
+</body>
+</html>

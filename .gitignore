@@ -1,0 +1,17 @@
+# Keep data dir tracked but ignore cached JSON (initial snapshot committed manually)
+# Uncomment the line below to ignore data cache files after initial commit:
+# data/*.json
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+.env
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Vercel
+.vercel/

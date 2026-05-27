@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>USD.AI Analytics</title>
+<style>
+  @font-face {
+    font-family: 'PP Eiko';
+    src: url('https://db.onlinewebfonts.com/t/6b2d532d2a62dade858748f086e69043.woff2') format('woff2'),
+         url('https://db.onlinewebfonts.com/t/6b2d532d2a62dade858748f086e69043.woff') format('woff');
+    font-weight: 500; font-style: normal; font-display: swap;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html, body {
+    font-family: 'Geist', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background: #FFFFFF;
+    color: #2C2622;
+    /* No horizontal padding — charts carry their own internal padding */
+  }
+
+  .page-header {
+    padding: 44px 48px 36px;
+    border-bottom: 1px solid #E5DDD4;
+  }
+  .page-title {
+    font-family: 'PP Eiko', Georgia, serif;
+    font-size: 22px;
+    font-weight: 500;
+    letter-spacing: 0.1px;
+    color: #2C2622;
+  }
+
+  .chart-wrap {
+    border-bottom: 1px solid #E5DDD4;
+  }
+  .chart-wrap iframe {
+    display: block;
+    width: 100%;
+    border: none;
+    /* no scrollbars */
+    overflow: hidden;
+  }
+</style>
+</head>
+<body>
+
+<div class="page-header">
+  <h1 class="page-title">USD.AI Analytics</h1>
+</div>
+
+<!-- Overview -->
+<div class="chart-wrap"><iframe src="tvl-chart.html" scrolling="no" onload="fit(this)"></iframe></div>
+<div class="chart-wrap"><iframe src="usdai-tvl-by-chain.html" scrolling="no" onload="fit(this)"></iframe></div>
+<div class="chart-wrap"><iframe src="usdai-tvl-by-chain-relative.html" scrolling="no" onload="fit(this)"></iframe></div>
+<div class="chart-wrap"><iframe src="usdai-proof-of-reserves.html" scrolling="no" onload="fit(this)"></iframe></div>
+<div class="chart-wrap"><iframe src="usdai-collateral-mix.html" scrolling="no" onload="fit(this)"></iframe></div>
+
+<!-- USDai -->
+<div class="chart-wrap"><iframe src="usdai-holders-over-time-ex-protocol.html" scrolling="no" onload="fit(this)"></iframe></div>
+<div class="chart-wrap"><iframe src="usdai-holder-distribution.html" scrolling="no" onload="fit(this)"></iframe></div>
+<div class="chart-wrap"><iframe src="usdai-cumulative-supply.html" scrolling="no" onload="fit(this)"></iframe></div>
+<div class="chart-wrap"><iframe src="usdai-mint-burn.html" scrolling="no" onload="fit(this)"></iframe></div>
+<div class="chart-wrap"><iframe src="usdai-peg-deviation.html" scrolling="no" onload="fit(this)"></iframe></div>
+
+<!-- sUSDai -->
+<div class="chart-wrap"><iframe src="susdai-holders-over-time.html" scrolling="no" onload="fit(this)"></iframe></div>
+<div class="chart-wrap"><iframe src="susdai-holders-over-time-relative.html" scrolling="no" onload="fit(this)"></iframe></div>
+<div class="chart-wrap"><iframe src="susdai-apy.html" scrolling="no" onload="fit(this)"></iframe></div>
+<div class="chart-wrap"><iframe src="susdai-peg-deviation.html" scrolling="no" onload="fit(this)"></iframe></div>
+
+<script>
+function fit(iframe) {
+  try {
+    const doc = iframe.contentDocument || iframe.contentWindow.document;
+
+    // Inject a style that forces all container-like elements to be full width,
+    // so every chart renders edge-to-edge at the same width as the iframe.
+    const s = doc.createElement('style');
+    s.textContent = [
+      'html, body { width: 100% !important; max-width: 100% !important; }',
+      '.container, .wrapper, main, [class*="container"] { max-width: 100% !important; width: 100% !important; }',
+    ].join(' ');
+    doc.head.appendChild(s);
+
+    // Wait a tick for the injected styles and any async canvas renders to settle,
+    // then size the iframe to the full document height (+ a small buffer so the
+    // bottom legend / footer is never clipped).
+    setTimeout(() => {
+      const h = Math.max(
+        doc.body.scrollHeight,
+        doc.documentElement.scrollHeight,
+        doc.body.offsetHeight,
+        doc.documentElement.offsetHeight
+      );
+      iframe.style.height = (h + 32) + 'px';  // 32px buffer for legends
+    }, 200);
+  } catch (e) {
+    // Cross-origin fallback
+    iframe.style.height = '640px';
+  }
+}
+</script>
+
+</body>
+</html>
