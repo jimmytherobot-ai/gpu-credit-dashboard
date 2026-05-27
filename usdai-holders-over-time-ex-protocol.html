@@ -142,7 +142,7 @@ const legendEl = document.getElementById('legend');
 [...SERIES].reverse().forEach(s => {
   const item = document.createElement('div');
   item.className = 'legend-item';
-  item.innerHTML = `<span class="legend-swatch" style="background:${s.color}90;border:1px solid ${s.color}"></span><span>${s.display}</span>`;
+  item.innerHTML = `<span class="legend-swatch" style="background:${s.color}90;border:1px solid ${s.color}"></span><span>${s.label}</span>`;
   legendEl.appendChild(item);
 });
 </script>
