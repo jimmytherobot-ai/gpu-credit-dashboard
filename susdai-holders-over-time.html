@@ -62,7 +62,7 @@ const DATES = ["2025-05-14", "2025-05-15", "2025-05-16", "2025-05-17", "2025-05-
 Chart.defaults.font.family = "'Geist', 'Helvetica Neue', Helvetica, Arial, sans-serif";
 
 const datasets = SERIES.map(s => ({
-  label: s.display,
+  label: s.label,
   data: DATES.map((d, i) => ({ x: new Date(d), y: s.data[i] })),
   backgroundColor: s.color + '90',
   borderColor: s.color,
@@ -137,7 +137,7 @@ const legendEl = document.getElementById('legend');
 [...SERIES].reverse().forEach(s => {
   const item = document.createElement('div');
   item.className = 'legend-item';
-  item.innerHTML = `<span class="legend-swatch" style="background:${s.color}90;border:1px solid ${s.color}"></span><span>${s.display}</span>`;
+  item.innerHTML = `<span class="legend-swatch" style="background:${s.color}90;border:1px solid ${s.color}"></span><span>${s.label}</span>`;
   legendEl.appendChild(item);
 });
 </script>
