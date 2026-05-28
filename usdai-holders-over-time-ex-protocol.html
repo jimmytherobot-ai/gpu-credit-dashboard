@@ -102,7 +102,7 @@ new Chart(ctx, {
         border: { display: false },
         ticks: {
           color: '#8A7F74', font: { size: 11 }, padding: 8,
-          callback: v => v >= 1000 ? (v/1000).toFixed(1) + 'k' : Math.round(v).toString(),
+          callback: v => '$' + (v/1e6).toFixed(0) + 'M',
         },
       },
     },
@@ -121,12 +121,12 @@ new Chart(ctx, {
           },
           label: ctx => {
             const v = ctx.raw.y;
-            const fmt = v >= 1000 ? (v/1000).toFixed(1)+'k' : Math.round(v).toString();
+            const fmt = '$' + (v/1e6).toFixed(1) + 'M';
             return `  ${ctx.dataset.label}: ${fmt}`;
           },
           afterBody: ctx => {
             const total = ctx.reduce((s, c) => s + c.raw.y, 0);
-            const fmt = total >= 1000 ? (total/1000).toFixed(1)+'k' : Math.round(total).toString();
+            const fmt = '$' + (total/1e6).toFixed(1) + 'M';
             return `\n  Total: ${fmt}`;
           }
         }
